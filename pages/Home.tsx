@@ -1,0 +1,143 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Home: React.FC = () => {
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section - Matching Attachment Exactly */}
+      <section className="bg-white pt-24 pb-16 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-[72px] font-bold text-[#111] mb-8 leading-[1.1] tracking-tight">
+            The New Era of Discoverability:<br />
+            <span className="text-[#00aeef]">AI Search Optimization</span>
+          </h1>
+          <p className="text-[#888] max-w-4xl mx-auto mb-16 text-lg md:text-[22px] leading-relaxed font-normal">
+            Don't just rank. Be the source. We structure your content to be discovered, understood, and referenced by generative AI, ensuring you're found in the new era of search.
+          </p>
+          
+          {/* YouTube Embed - Auto-play enabled */}
+          <div className="max-w-5xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-[0_30px_60px_-12px_rgba(0,0,0,0.3)] bg-gray-100 border border-gray-200">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/C8A7ooofFDA?autoplay=1&mute=1&rel=0&modestbranding=1" 
+                title="AISO Video" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* AISO Platform Capabilities - Inserted New Section */}
+      <section className="bg-[#eeeeee] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6 text-black tracking-tight">AISO Platform Capabilities</h2>
+            <p className="text-gray-500 text-lg font-medium">Our comprehensive AI-powered suite for mastering content discoverability in the age of AI.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                title: 'Content & Schema AI', 
+                items: ['Generative AI Content', 'Automated Schema Markup', 'Topical Authority Builder', 'Semantic Analysis'] 
+              },
+              { 
+                title: 'Technical AISO', 
+                items: ['Internal Link Structuring', 'Automated Core Web Vitals', 'Crawl Budget Optimization', 'Log File Analysis'] 
+              },
+              { 
+                title: 'Analytics & Reporting', 
+                items: ['Predictive SERP Tracking', 'Automated Anomaly Detection', 'Voice Search Analytics', 'Full-Funnel Attribution'] 
+              },
+              { 
+                title: 'Custom AI Models', 
+                items: ['Bespoke Ranking Models', 'Proprietary Data Integration', 'Competitor AI Analysis', 'Custom AISO Workflows'] 
+              },
+            ].map((card, idx) => (
+              <div key={idx} className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+                <h3 className="font-bold text-xl mb-10 text-gray-900 leading-tight h-14 flex items-center justify-center">
+                  {card.title}
+                </h3>
+                <ul className="text-[15px] text-gray-700 space-y-4 mb-12 flex-grow w-full text-left">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <svg className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                      </svg>
+                      <span className="font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="w-full py-3.5 px-6 rounded-xl bg-gray-50 border border-gray-100 text-[15px] font-bold text-gray-800 hover:bg-gray-100 transition-all">
+                  Learn More
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section - Updated to match attachment */}
+      <section className="bg-white py-24 px-6 border-t border-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block bg-gray-100 px-4 py-1.5 rounded-full text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-6">
+            Generative AI
+          </div>
+          <h2 className="text-4xl md:text-[56px] font-bold mb-8 text-black leading-[1.1] tracking-tight">
+            Achieve Unfair Advantages in AI Discoverability
+          </h2>
+          <p className="text-[#888] mb-12 text-lg leading-relaxed max-w-3xl mx-auto">
+            Our deep expertise in large language models allows us to structure your content to be found, understood, and referenced by AI, giving you a distinct competitive edge.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left mb-12">
+            {[
+              "Generate Semantically-Rich Content at Scale",
+              "Automate Technical Optimization for AI Crawlers",
+              "Predict Shifts in AI-driven Search",
+              "Gain Deeper Insights from AI Analytics"
+            ].map((text, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="shrink-0 w-5 h-5 rounded-full border border-[#00aeef] flex items-center justify-center">
+                  <svg className="w-3 h-3 text-[#00aeef]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span className="text-[17px] font-semibold text-gray-800">{text}</span>
+              </div>
+            ))}
+          </div>
+
+          <button className="w-full max-w-[700px] py-3.5 border border-gray-200 rounded-xl text-[15px] font-bold text-gray-800 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+            Learn More
+          </button>
+        </div>
+      </section>
+
+      {/* Ready CTA Section - Fixed to be one row */}
+      <section className="bg-[#1a237e] py-32 px-6 text-center text-white relative">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-4xl md:text-[48px] font-bold mb-6 tracking-tight whitespace-normal md:whitespace-nowrap">
+            Ready to Be Discovered by AI?
+          </h2>
+          <p className="text-blue-100/70 text-[19px] mb-12 leading-relaxed font-medium max-w-3xl mx-auto">
+            Speak with our AISO specialists to see how our AI can revolutionize your content strategy and drive exponential growth in the new era of search.
+          </p>
+          <Link 
+            to="/contact" 
+            className="inline-block px-14 py-4 bg-[#ececec] text-gray-800 font-bold rounded-xl hover:bg-white transition-all shadow-lg text-[16px]"
+          >
+            Request a Demo
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
