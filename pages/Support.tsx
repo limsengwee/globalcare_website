@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Support: React.FC = () => {
   return (
@@ -16,18 +17,24 @@ const Support: React.FC = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
-            { icon: '📖', title: 'Knowledge Base', desc: 'Guides for system integration, workflows, and common tasks.', action: 'Browse Articles' },
-            { icon: '📥', title: 'Downloads', desc: 'Client tools, software installers, and latest release notes.', action: 'View Downloads' },
-            { icon: '🎧', title: 'Remote Support', desc: 'Get a session code and we\'ll connect securely to assist.', action: 'Start Session' },
-            { icon: '🎓', title: 'Training', desc: 'Quick refreshers and onboarding for your team.', action: 'See Modules' },
+            { icon: '📖', title: 'Knowledge Base', desc: 'Guides for system integration, workflows, and common tasks.', action: 'Browse Articles', path: '#' },
+            { icon: '📥', title: 'Downloads', desc: 'Client tools, software installers, and latest release notes.', action: 'View Downloads', path: '/downloads' },
+            { icon: '🎧', title: 'Remote Support', desc: 'Get a session code and we\'ll connect securely to assist.', action: 'Start Session', path: '#' },
+            { icon: '🎓', title: 'Training', desc: 'Quick refreshers and onboarding for your team.', action: 'See Modules', path: '#' },
           ].map((item, i) => (
             <div key={i} className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col h-full hover:shadow-md transition-shadow">
               <div className="text-4xl mb-6">{item.icon}</div>
               <h3 className="font-bold text-lg mb-2">{item.title}</h3>
               <p className="text-sm text-gray-500 mb-8 flex-grow leading-relaxed">{item.desc}</p>
-              <button className="w-full py-2 border border-gray-200 text-xs font-semibold rounded hover:bg-gray-50 transition-colors">
-                {item.action}
-              </button>
+              {item.path.startsWith('/') ? (
+                <Link to={item.path} className="w-full py-2 border border-gray-200 text-xs font-semibold rounded hover:bg-gray-50 transition-colors text-center block">
+                  {item.action}
+                </Link>
+              ) : (
+                <button className="w-full py-2 border border-gray-200 text-xs font-semibold rounded hover:bg-gray-50 transition-colors">
+                  {item.action}
+                </button>
+              )}
             </div>
           ))}
         </div>
